@@ -108,7 +108,7 @@ class OptionKeys:
 class OptionDefaultValue:
     website_base_url = "http://127.0.0.1"
     website_name = "dAiv Online Judge"
-    website_name_shortcut = "dAiv - Online Judge"
+    website_name_shortcut = "Online Judge"
     website_footer = "Online Judge Homepage of dAiv"
     allow_register = True
     submission_list_show_all = True
