@@ -74,7 +74,8 @@ ROOT_URLCONF = 'oj.urls'
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    "https://dAiv-CNU.github.io"
+    "https://dAiv-CNU.github.io",
+    "https://daiv-cnu.github.io"
 ]
 CORS_ORIGIN_REGEX_WHITELIST = [
     r"^http://localhost:[0-9]+$",
@@ -103,7 +104,7 @@ CORS_ALLOW_HEADERS = (
 )
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://dAiv-CNU.github.io",
+    "https://dAiv-CNU.github.io", "https://daiv-cnu.github.io",
     "http://127.0.0.1:8888", "http://localhost:8888",
     "http://127.0.0.1:8080", "http://localhost:8080",
     "http://127.0.0.1:8000", "http://localhost:8000"
