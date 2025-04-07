@@ -75,7 +75,11 @@ ROOT_URLCONF = 'oj.urls'
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "https://dAiv-CNU.github.io",
-    "https://daiv-cnu.github.io"
+    "https://daiv-cnu.github.io",
+    "https://dAiv-CNU.github.io/",
+    "https://daiv-cnu.github.io/",
+    "https://daiv-cnu.duckdns.org", 
+    "https://daiv-cnu.duckdns.org/"
 ]
 CORS_ORIGIN_REGEX_WHITELIST = [
     r"^http://localhost:[0-9]+$",
@@ -103,7 +107,7 @@ CORS_ALLOW_HEADERS = (
     'x-requested-with',
 )
 
-X_FRAME_OPTIONS = 'ALLOW-FROM https://daiv-cnu.github.io'
+X_FRAME_OPTIONS = 'ALLOW-FROM https://daiv-cnu.github.io/'
 
 CSRF_COOKIE_DOMAIN = None
 CSRF_COOKIE_SECURE = True
@@ -111,9 +115,14 @@ CSRF_COOKIE_HTTPONLY = False
 CSRF_COOKIE_SAMESITE = 'Lax'
 CSRF_TRUSTED_ORIGINS = [
     "https://dAiv-CNU.github.io", "https://daiv-cnu.github.io",
+    "https://dAiv-CNU.github.io/", "https://daiv-cnu.github.io/",
+    "https://daiv-cnu.duckdns.org", "https://daiv-cnu.duckdns.org/",
     "http://127.0.0.1:8888", "http://localhost:8888",
     "http://127.0.0.1:8080", "http://localhost:8080",
-    "http://127.0.0.1:8000", "http://localhost:8000"
+    "http://127.0.0.1:8000", "http://localhost:8000",
+    "http://127.0.0.1:8888/", "http://localhost:8888/",
+    "http://127.0.0.1:8080/", "http://localhost:8080/",
+    "http://127.0.0.1:8000/", "http://localhost:8000/"
 ]
 
 SESSION_COOKIE_SAMESITE = 'None'
