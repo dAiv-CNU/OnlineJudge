@@ -103,8 +103,12 @@ CORS_ALLOW_HEADERS = (
     'x-requested-with',
 )
 
+X_FRAME_OPTIONS = 'ALLOW-FROM https://daiv-cnu.github.io'
+
+CSRF_COOKIE_DOMAIN = None
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_SAMESITE = 'Lax'
 CSRF_TRUSTED_ORIGINS = [
     "https://dAiv-CNU.github.io", "https://daiv-cnu.github.io",
     "http://127.0.0.1:8888", "http://localhost:8888",
