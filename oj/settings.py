@@ -73,6 +73,14 @@ MIDDLEWARE = (
 ROOT_URLCONF = 'oj.urls'
 
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://daiv-cnu.github.io",
+    "https://daiv-cnu.duckdns.org",
+]
+CORS_ORIGIN_REGEX_WHITELIST = [
+    r"^http://localhost:[0-9]+$",
+    r"^http://127\.0\.0\.1:[0-9]+$"
+]
 
 CORS_ALLOW_METHODS = (
     'DELETE',
@@ -94,6 +102,16 @@ CORS_ALLOW_HEADERS = (
     'x-csrftoken',
     'x-requested-with',
 )
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://daiv-cnu.github.io",
+    "https://daiv-cnu.duckdns.org",
+    "http://127.0.0.1:8888", "http://localhost:8888",
+    "http://127.0.0.1:8080", "http://localhost:8080",
+    "http://127.0.0.1:8000", "http://localhost:8000"
+]
+#SESSION_COOKIE_SAMESITE = 'None'
+#SESSION_COOKIE_SECURE = True
 
 TEMPLATES = [
     {
@@ -164,48 +182,48 @@ STATICFILES_DIRS = [os.path.join(DATA_DIR, "public")]
 
 LOGGING_HANDLERS = ['console', 'sentry'] if production_env else ['console']
 LOGGING = {
-   'version': 1,
-   'disable_existing_loggers': False,
-   'formatters': {
-       'standard': {
-           'format': '[%(asctime)s] - [%(levelname)s] - [%(name)s:%(lineno)d]  - %(message)s',
-           'datefmt': '%Y-%m-%d %H:%M:%S'
-       }
-   },
-   'handlers': {
-       'console': {
-           'level': 'DEBUG',
-           'class': 'logging.StreamHandler',
-           'formatter': 'standard'
-       },
-       'sentry': {
-           'level': 'ERROR',
-           'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
-           'formatter': 'standard'
-       }
-   },
-   'loggers': {
-       'django.request': {
-           'handlers': LOGGING_HANDLERS,
-           'level': 'ERROR',
-           'propagate': True,
-       },
-       'django.db.backends': {
-           'handlers': LOGGING_HANDLERS,
-           'level': 'ERROR',
-           'propagate': True,
-       },
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '[%(asctime)s] - [%(levelname)s] - [%(name)s:%(lineno)d]  - %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+        'sentry': {
+            'level': 'ERROR',
+            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+            'formatter': 'standard'
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': LOGGING_HANDLERS,
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        'django.db.backends': {
+            'handlers': LOGGING_HANDLERS,
+            'level': 'ERROR',
+            'propagate': True,
+        },
         'dramatiq': {
             'handlers': LOGGING_HANDLERS,
             'level': 'DEBUG',
             'propagate': False,
         },
-       '': {
-           'handlers': LOGGING_HANDLERS,
-           'level': 'WARNING',
-           'propagate': True,
-       }
-   },
+        '': {
+            'handlers': LOGGING_HANDLERS,
+            'level': 'WARNING',
+            'propagate': True,
+        }
+    },
 }
 
 REST_FRAMEWORK = {
