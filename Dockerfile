@@ -5,9 +5,13 @@ WORKDIR /app
 RUN <<EOS
 set -ex
 apk add unzip
-wget https://github.com/QingdaoU/OnlineJudgeFE/releases/download/oj_2.7.5/dist.zip
+#wget https://github.com/QingdaoU/OnlineJudgeFE/releases/download/oj_2.7.5/dist.zip
+wget https://codeload.github.com/dAiv-CNU/OnlineJudgeFE/zip/refs/heads/main -O dist.zip
 unzip dist.zip
 rm -f dist.zip
+
+mv ./OnlineJudgeFE-main/dist ./dist
+rm -rf ./OnlineJudgeFE-main
 EOS
 
 FROM python:3.12-alpine
