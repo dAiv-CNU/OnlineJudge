@@ -79,7 +79,8 @@ CORS_ALLOWED_ORIGINS = [
 ]
 CORS_ORIGIN_REGEX_WHITELIST = [
     r"^http://localhost:[0-9]+$",
-    r"^http://127\.0\.0\.1:[0-9]+$"
+    r"^http://127\.0\.0\.1:[0-9]+$",
+    r"^http://daiv-cnu.duckdns.org:[0-9]+$"
 ]
 
 CORS_ALLOW_METHODS = (
@@ -106,6 +107,7 @@ CORS_ALLOW_HEADERS = (
 CSRF_TRUSTED_ORIGINS = [
     "https://daiv-cnu.github.io",
     "https://daiv-cnu.duckdns.org",
+    "http://daiv-cnu.duckdns.org:8000",
     "http://127.0.0.1:8888", "http://localhost:8888",
     "http://127.0.0.1:8080", "http://localhost:8080",
     "http://127.0.0.1:8000", "http://localhost:8000"
